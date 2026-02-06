@@ -1,0 +1,5 @@
+{
+  "name": "Research Paper Generation",
+  "description": "A professional academic writing application that generates a complete, original, plagiarism-free research paper of around 1000 words based on a topic provided by the user.",
+  "requestFramePermissions": []
+}

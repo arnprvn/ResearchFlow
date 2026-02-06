@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Research Paper Generation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .paper-content h1 { font-size: var(--heading-size-h1, 20pt); }
+      .paper-content h2 { font-size: var(--heading-size-h2, 18pt); }
+      .paper-content h3 { font-size: var(--heading-size-h3, 16pt); }
+      .paper-content p, .paper-content li, .paper-content ul, .paper-content {
+        font-size: var(--body-size, 11pt);
+        line-height: var(--line-spacing, 1.5);
+      }
+      /* Override prose styles that might interfere */
+      .prose h1, .prose h2, .prose h3, .prose p, .prose li, .prose ul {
+          margin-top: 0.8em;
+          margin-bottom: 0.8em;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.40.0",
+    "jspdf": "https://esm.sh/jspdf@2.5.1",
+    "html2canvas": "https://esm.sh/html2canvas@1.4.1"
+  }
+}
+</script>
+</head>
+  <body class="bg-gray-100 dark:bg-gray-900">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
