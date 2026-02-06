@@ -255,10 +255,12 @@ export const chatWithGemini = async (prompt: string, image: ChatImage | null): P
     }
     parts.push({ text: prompt });
 
-    const response = await ai.models.generateContent({
+    const generate = () => ai.models.generateContent({
       model: 'gemini-3-pro-preview',
       contents: { parts: parts },
     });
+    
+    const response = await withRetry(generate);
 
     const text = response.text;
     if (text) {
@@ -268,9 +270,7 @@ export const chatWithGemini = async (prompt: string, image: ChatImage | null): P
 
   } catch (error) {
     console.error("Error in chatWithGemini:", error);
-    if (error instanceof Error) {
-        return `Sorry, I encountered an error: ${error.message}`;
-    }
-    return "Sorry, I encountered an unknown error.";
+    // Return a more user-friendly error message instead of the raw error object.
+    return "Sorry, I'm having trouble connecting. Please try again in a moment.";
   }
 };
