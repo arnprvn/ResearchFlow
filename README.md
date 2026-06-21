@@ -17,8 +17,3 @@ A modern web application built with React and Node.js.
 - Node.js
 - npm
 
-### Installation
-
-1. Clone the repository:
-   ```bash
-   git clone <repository-url>
